@@ -19,8 +19,11 @@ if __name__ == "__main__":
     from sys import argv
 
     EMPLOYEE_ID = int(argv[1])
-    TODOS = requests.get(f'https://jsonplaceholder.typicode.com/todos/').json()
-    EMPLOYEE_NAMES = requests.get(f'https://jsonplaceholder.typicode.com/users').json()
+
+    ROOT_URL = "https://jsonplaceholder.typicode.com/"
+
+    TODOS = requests.get(f'{ROOT_URL}todos/').json()
+    EMPLOYEE_NAMES = requests.get(f'{ROOT_URL}users/').json()
 
     EMPLOYEE_NAME = EMPLOYEE_NAMES[EMPLOYEE_ID - 1]['name']
 
@@ -34,11 +37,12 @@ if __name__ == "__main__":
     DONE_TASKS_TITLES = tuple(
         task['title']
         for task in EMPLOYEE_TODOS
-        if task['completed'] == True
+        if task['completed'] is True
     )
     NUMBER_OF_DONE_TASKS = len(DONE_TASKS_TITLES)
 
-    print(f"Employee {EMPLOYEE_NAME} is done with tasks({NUMBER_OF_DONE_TASKS}/{TOTAL_NUMBER_OF_TASKS}):")
+    print(f"Employee {EMPLOYEE_NAME} is done with\
+ tasks ({NUMBER_OF_DONE_TASKS}/{TOTAL_NUMBER_OF_TASKS}):")
 
     for task_title in DONE_TASKS_TITLES:
         print(f"\t {task_title}")
