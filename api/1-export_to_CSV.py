@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Exercise 0:
+Exercise 1:
 Interacts with the APIs
 at https://jsonplaceholder.typicode.com/
 and gets info about users'
