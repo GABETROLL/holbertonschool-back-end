@@ -15,8 +15,8 @@ and https://jsonplaceholder.typicode.com/users
 to understand how the JSON data is recieved by this program!!!
 ---
 """
-import requests
 import csv
+import requests
 
 if __name__ == "__main__":
     from sys import argv
