@@ -57,17 +57,15 @@ USERS = requests.get(f'{ROOT_URL}users/').json()
 if __name__ == "__main__":
     with open("todo_all_employees.json", "w") as output_file:
         result = {
-            user['id']: (
-                USER_TASKS := [
-                    {
-                        'username': user['username'],
-                        'task': task['title'],
-                        'completed': task['completed']
-                    } 
-                    for task in TODOS
-                    if task['userId'] == user['id']
-                ]
-            )
+            user['id']: [
+                {
+                    'username': user['username'],
+                    'task': task['title'],
+                    'completed': task['completed']
+                }
+                for task in TODOS
+                if task['userId'] == user['id']
+            ]
             for user in USERS
         }
 
