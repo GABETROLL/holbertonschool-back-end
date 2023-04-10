@@ -42,7 +42,7 @@ if __name__ == "__main__":
     NUMBER_OF_DONE_TASKS = len(DONE_TASKS_TITLES)
 
     print(f"Employee {EMPLOYEE_NAME} is done with\
- tasks ({NUMBER_OF_DONE_TASKS}/{TOTAL_NUMBER_OF_TASKS}):")
+ tasks({NUMBER_OF_DONE_TASKS}/{TOTAL_NUMBER_OF_TASKS}):")
 
     for task_title in DONE_TASKS_TITLES:
         print(f"\t {task_title}")
